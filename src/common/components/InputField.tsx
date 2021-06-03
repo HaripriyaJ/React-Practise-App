@@ -16,7 +16,7 @@ const StyledInputField = styled.input`
     border: none;
     outline:none;
     border-radius: 0.5em;
-    width: ${props => props?.width ? props.width : '75%'};
+    width: ${props => props?.width ? props.width : '100%'};
     &:focus {
         box-shadow: 0 0 6px ${HIGHLIGHT_COLOR};
     }
