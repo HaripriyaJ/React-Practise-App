@@ -1,8 +1,9 @@
 import React from 'react';
+import Button from './common/components/Button';
 
 function App() {
   return (
-    <h3>React Practice App</h3>
+    <Button title="Login" isRounded={true}></Button>
   );
 }
 
