@@ -3,18 +3,18 @@ import styled from "styled-components";
 import { BUTTON_PRIMARY, FONT_COLOR_DEFAULT, HIGHLIGHT_COLOR } from "../../constants/CssConstants";
 
 interface ButtonProp {
-    title?: string;
+    title: string;
+    onClick: () => any;
     width?: string;
     bgColor?: string;
     fontColor?: string;
     isRounded?: boolean;
-    onClick?: () => any;
 }
 
 const StyledButton = styled.button<ButtonProp>`
-    border: none;
     margin: 0.5em;
     padding: 0.8em 2.5em;
+    border: none;
     width: ${props => props?.width ? props.width : 'auto'};
     background-color: ${props => props?.bgColor ? props.bgColor : BUTTON_PRIMARY};
     color: ${props => props?.fontColor ? props.fontColor : FONT_COLOR_DEFAULT};
@@ -38,7 +38,7 @@ function Button (props: ButtonProp) {
         bgColor={props?.bgColor || ""}
         fontColor={props?.fontColor || ""}
         isRounded={props?.isRounded || false}
-        onClick={() => props.onClick} /* Lifting state-up */
+        onClick={props.onClick} /* Lifting state-up */
       >
         {props?.title || "Submit"}
       </StyledButton>
