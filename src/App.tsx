@@ -1,5 +1,3 @@
-import './App.css';
-
 function App() {
   return (
     <h3>React Practice App</h3>
