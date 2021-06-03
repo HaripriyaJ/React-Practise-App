@@ -1,3 +1,7 @@
+
+# React-Practise-App
+A basic React application built to learn core concepts of React, dependencies etc
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
