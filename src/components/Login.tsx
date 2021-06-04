@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
-import { AuthService } from "../apis/Authentication";
 import Button from "../common/components/Button";
 import InputField from "../common/components/InputField";
 import "../common/styles/Card.scss";
@@ -42,7 +41,7 @@ function Login() {
 
     return (
       <div className="card">
-        <form onSubmit={formSubmit}>
+        <form className="form" onSubmit={formSubmit}>
           <div>
             <label htmlFor="email">Email</label>
             <InputField

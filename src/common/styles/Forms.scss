@@ -1,4 +1,4 @@
-form {
+.form {
     h1,
     h2,
     h3,
@@ -34,12 +34,12 @@ form {
         padding: 1px;
     }
 
-    .form-button__wrapper {
+    &-button__wrapper {
         display: flex;
         margin-top: 0.5em;
-    }
 
-    .form-button__wrapper button {
-        margin: auto;
+        button {
+            margin: auto;
+        }
     }
 }
