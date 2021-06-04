@@ -1,9 +1,20 @@
 import React from 'react';
 import Login from './components/Login';
+import {
+  Route,
+  Switch
+} from "react-router-dom";
+import Home from './common/components/Home';
+import PrivateRoute from './common/components/PrivateRoute';
 
 function App() {
   return (
-    <Login></Login>
+      <Switch>
+        <PrivateRoute path="/home">
+          <Home></Home>
+        </PrivateRoute>
+        <Route path="/login" component={Login}/>
+      </Switch>
   );
 }
 
