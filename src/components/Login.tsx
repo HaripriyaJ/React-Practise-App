@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Button from "../common/components/Button";
 import InputField from "../common/components/InputField";
-import "../common/styles/Card.css";
-import "../common/styles/Forms.css";
+import "../common/styles/Card.scss";
+import "../common/styles/Forms.scss";
 
 const checkEmailValidity = (email:string): boolean => {
     return /\S+@\S+\.\S+/.test(email) ? true : false;
