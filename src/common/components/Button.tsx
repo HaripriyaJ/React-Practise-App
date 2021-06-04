@@ -2,13 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import { BUTTON_PRIMARY, FONT_COLOR_DEFAULT, HIGHLIGHT_COLOR } from "../../constants/CssConstants";
 
-interface ButtonProp {
+export interface ButtonProp {
     title: string;
-    onClick: () => any;
+    type:any;
     width?: string;
     bgColor?: string;
     fontColor?: string;
     isRounded?: boolean;
+    onClick?: () => any;
 }
 
 const StyledButton = styled.button<ButtonProp>`
@@ -33,14 +34,15 @@ const StyledButton = styled.button<ButtonProp>`
 function Button (props: ButtonProp) {   
     return (
       <StyledButton
-        title={props?.title || "Submit"}
+        title={props.title}
+        type={props.type}
         width={props?.width || ""}
         bgColor={props?.bgColor || ""}
         fontColor={props?.fontColor || ""}
         isRounded={props?.isRounded || false}
         onClick={props.onClick} /* Lifting state-up */
       >
-        {props?.title || "Submit"}
+        {props.title}
       </StyledButton>
     );
 }

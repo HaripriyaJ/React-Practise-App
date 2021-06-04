@@ -5,8 +5,7 @@ html {
   color: #cdd9e5;
 }
 
-body,
-input[type='text'] {
+body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -18,4 +17,10 @@ input[type='text'] {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Selected text properties */
+::selection {
+  color: #cdd9e5;
+  background: #2DA89C;
 }

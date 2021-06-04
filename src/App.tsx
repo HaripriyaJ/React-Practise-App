@@ -1,8 +1,9 @@
 import React from 'react';
+import Login from './components/Login';
 
 function App() {
   return (
-    <h3>Sample app</h3>
+    <Login></Login>
   );
 }
 
