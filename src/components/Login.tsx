@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Redirect } from "react-router-dom";
+import { AuthService } from "../apis/Authentication";
 import Button from "../common/components/Button";
 import InputField from "../common/components/InputField";
 import "../common/styles/Card.scss";
@@ -15,22 +17,32 @@ const checkPasswordValidity = (password:string):boolean => {
 function Login() {
     const [email, setUserName] = useState('');
     const [password, setPassword] = useState('');
+    const [isAuthenticated, setAuthentication] = useState(false);
 
     const formValidation = (fieldName:string, fieldValue:string) => {
         fieldName === "email" ?  setUserName(fieldValue) : setPassword(fieldValue);
     }
 
-    const loginSubmit = (event:any) => {
+    const formSubmit = (event:any) => {
         event.preventDefault();
         if (email && checkEmailValidity(email)) {
-            password && checkPasswordValidity(password) ? alert("Login successful") : alert("Password too short");
+            password && checkPasswordValidity(password) ? login() : alert("Password too short");
         }
         else alert("Invalid email");
     }
 
+    const login = () =>  {
+      setAuthentication(true)
+      localStorage.setItem('email', email);
+      // Make API call, process and redirect here
+    }
+
+    if (isAuthenticated) return <Redirect to="/home"/>
+    
+
     return (
       <div className="card">
-        <form onSubmit={loginSubmit}>
+        <form onSubmit={formSubmit}>
           <div>
             <label htmlFor="email">Email</label>
             <InputField
