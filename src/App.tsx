@@ -14,8 +14,8 @@ function App() {
         <PrivateRoute path="/home"><Home/></PrivateRoute>
 
         {/* Redirect user to home page onload by default if user is logged in */}
-        <Route path="/login" exact={true} render={() => {
-          return AuthService.login() === true ? <Redirect to="home"/> : React.createElement(Login)
+        <Route path="/login" exact={true} render={(props) => {
+          return AuthService.login() === true ? <Redirect to="home"/> : React.createElement(Login, {...props})
         }}
         />
 
@@ -27,7 +27,7 @@ function App() {
         */}
         <Route path="/" render={(props) => {
             const { location } = props;
-            if (AuthService.login() === true) return location.pathname === '/home' ? <Redirect to='/home' /> : <Redirect to='/page-not-found-404' />
+            if (AuthService.login() === true) return location.pathname === '/home' || location.pathname === '/' ? <Redirect to='/home' /> : <Redirect to='/page-not-found-404' />
             else return location.pathname === '/' ? <Redirect to='/login' /> : <Redirect to='/page-not-found-404' />
           }
         } /> {/* Wildcard route*/}

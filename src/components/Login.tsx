@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
+import React from "react";
 import { useForm } from "react-hook-form";
 import Button from "../common/components/Button";
 import InputField from "../common/components/InputField";
@@ -8,18 +7,15 @@ import "../common/styles/Forms.scss";
 import { IUserLoginData } from "../apis/Authentication";
 import InputError from "../common/components/InputError";
 
-export default function Login() {
-    const [isAuthenticated, setAuthentication] = useState(false);
+export default function Login(props:any) {
     const { register, formState:{ errors }, handleSubmit } = useForm();
 
+    // Make API call, process and redirect here
     const formSubmit = (data:IUserLoginData) => {
-        setAuthentication(true)
         localStorage.setItem('email', data.email);
-        // Make API call, process and redirect here
+        props.history.push("/home") // Redirect to home page
     }
 
-    if (isAuthenticated) return <Redirect to="/home"/>
-    
     return (
       <div className="card">
         <form className="form" onSubmit={handleSubmit(formSubmit)}>

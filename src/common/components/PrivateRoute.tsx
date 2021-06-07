@@ -8,7 +8,7 @@ function PrivateRoute (props:any) {
       <Route {...rest} render={() => {
         // To avoid matching with home/{something_gibberish}
         if (AuthService.login() === true) return location.pathname ===  computedMatch.path ? children : <Redirect to='/page-not-found-404' />
-        else return <Redirect to='/login' />
+        else return <Redirect to={{pathname: '/login', state: {from: props.location}}} /> // Redirect back to page from which login was triggered
       }} />
     );
 }
