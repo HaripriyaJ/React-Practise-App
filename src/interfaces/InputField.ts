@@ -9,7 +9,6 @@ export interface InputFieldProp {
     onKeyUp?: (event:any) => any;
 }
 
-
 export interface InputErrorProp {
     message: string;
 }

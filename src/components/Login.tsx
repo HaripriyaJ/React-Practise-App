@@ -4,8 +4,8 @@ import Button from "../common/components/Button";
 import InputField from "../common/components/InputField";
 import "../common/styles/Card.scss";
 import "../common/styles/Forms.scss";
-import { IUserLoginData } from "../apis/Authentication";
 import InputError from "../common/components/InputError";
+import { IUserLoginData } from "../interfaces/IAuthentication";
 
 export default function Login(props:any) {
     const { register, formState:{ errors }, handleSubmit } = useForm();
