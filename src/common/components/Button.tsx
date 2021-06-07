@@ -1,16 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { BUTTON_PRIMARY, FONT_COLOR_DEFAULT, HIGHLIGHT_COLOR } from "../../constants/CssConstants";
-
-export interface ButtonProp {
-    title: string;
-    type:any;
-    width?: string;
-    bgColor?: string;
-    fontColor?: string;
-    isRounded?: boolean;
-    onClick?: () => any;
-}
+import { ButtonProp } from "../../interfaces/Button";
 
 const StyledButton = styled.button<ButtonProp>`
     margin: 0.5em;

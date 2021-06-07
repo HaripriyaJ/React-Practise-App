@@ -1,10 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { DANGER } from "../../constants/CssConstants";
-
-export interface InputErrorProp {
-    message: string;
-}
+import { InputErrorProp } from "../../interfaces/InputField";
 
 const StyledInputErrorField = styled.span<InputErrorProp>`
     font-size: smaller;

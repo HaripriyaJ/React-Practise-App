@@ -1,17 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { FONT_COLOR_DEFAULT, HIGHLIGHT_COLOR } from "../../constants/CssConstants";
-
-export interface InputFieldProp {
-    name:string;
-    type: string;
-    placeholder:string;
-    onBlur: (event:any) => any;
-    onChange: (event:any) => any;
-    label?:string;
-    width?: string;
-    onKeyUp?: (event:any) => any;
-}
+import { InputFieldProp } from "../../interfaces/InputField";
 
 const StyledInputField = styled.input<InputFieldProp>`
     margin: 0.5em 0.5em 1.3em 0.5em;;
