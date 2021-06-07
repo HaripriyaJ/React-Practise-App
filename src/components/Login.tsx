@@ -1,69 +1,48 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
+import { useForm } from "react-hook-form";
 import Button from "../common/components/Button";
 import InputField from "../common/components/InputField";
 import "../common/styles/Card.scss";
 import "../common/styles/Forms.scss";
+import { IUserLoginData } from "../apis/Authentication";
+import InputError from "../common/components/InputError";
 
-const checkEmailValidity = (email:string): boolean => {
-    return /\S+@\S+\.\S+/.test(email) ? true : false;
-}
-
-const checkPasswordValidity = (password:string):boolean => {
-    return password.length > 8 ? true : false;
-}
-
-function Login() {
-    const [email, setUserName] = useState('');
-    const [password, setPassword] = useState('');
+export default function Login() {
     const [isAuthenticated, setAuthentication] = useState(false);
+    const { register, formState:{ errors }, handleSubmit } = useForm();
 
-    const formValidation = (fieldName:string, fieldValue:string) => {
-        fieldName === "email" ?  setUserName(fieldValue) : setPassword(fieldValue);
-    }
-
-    const formSubmit = (event:any) => {
-        event.preventDefault();
-        if (email && checkEmailValidity(email)) {
-            password && checkPasswordValidity(password) ? login() : alert("Password too short");
-        }
-        else alert("Invalid email");
-    }
-
-    const login = () =>  {
-      setAuthentication(true)
-      localStorage.setItem('email', email);
-      // Make API call, process and redirect here
+    const formSubmit = (data:IUserLoginData) => {
+        setAuthentication(true)
+        localStorage.setItem('email', data.email);
+        // Make API call, process and redirect here
     }
 
     if (isAuthenticated) return <Redirect to="/home"/>
     
-
     return (
       <div className="card">
-        <form className="form" onSubmit={formSubmit}>
-          <div>
-            <label htmlFor="email">Email</label>
-            <InputField
-              name="email"
+        <form className="form" onSubmit={handleSubmit(formSubmit)}>
+          <InputField
+              {...register("email", { required:true, pattern: /\S+@\S+\.\S+/ })}
+              label="Email"
               type="email"
               placeholder=""
               width="90%"
-              onChange={(event) => formValidation(event.target.name, event.target.value)}
-              value={email}
-            ></InputField>
-          </div>
-          <div>
-            <label htmlFor="password">Password</label>
-            <InputField
-              name="password"
+          ></InputField>
+          {errors.email?.type === 'required' && <InputError message="Email is required"/>}
+          {errors.email?.type === 'pattern' && <InputError message="Invalid email format"/>}
+
+         <InputField
+              {...register("password", { required:true, minLength: 8 })}
+              label="Password"
               type="password"
               placeholder=""
               width="90%"
-              onChange={(event) => setPassword(event.target.value)}
-              value={password}
-            ></InputField>
-          </div>
+          ></InputField>
+          {errors.password?.type === 'required' && <InputError message="Password is required"/>}
+          {errors.password?.type === 'minLength' && <InputError message="Password must be min. 8 characters long"/>}
+
           <div className="form-button__wrapper">
             <Button title="Login" type="submit" isRounded={true}></Button>
           </div>
@@ -71,4 +50,3 @@ function Login() {
       </div>
     );
 }
-export default Login;

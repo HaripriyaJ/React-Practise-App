@@ -6,8 +6,9 @@ export interface InputFieldProp {
     name:string;
     type: string;
     placeholder:string;
-    value:string;
+    onBlur: (event:any) => any;
     onChange: (event:any) => any;
+    label?:string;
     width?: string;
     onKeyUp?: (event:any) => any;
 }
@@ -27,17 +28,22 @@ const StyledInputField = styled.input<InputFieldProp>`
     }
 `;
 
-function InputField (props:InputFieldProp) {  
+const InputField  = React.forwardRef((props: InputFieldProp, ref: any)  => {  
     return (
-      <StyledInputField
-        name={props.name}
-        type={props.type}
-        placeholder={props.placeholder}
-        value={props.value || ""}
-        width={props?.width || ""}
-        onChange={props.onChange}
-        autoComplete="off"
-      ></StyledInputField>
+      <>
+        <label htmlFor={props.name}>{props.label}</label>
+        <StyledInputField
+          name={props.name}
+          type={props.type}
+          placeholder={props.placeholder}
+          width={props.width || ""}
+          ref={ref}
+          onChange={props.onChange}
+          onBlur={props.onBlur}
+          autoComplete="off"
+        ></StyledInputField>
+      </>
     );
-}
+});
+
 export default InputField;

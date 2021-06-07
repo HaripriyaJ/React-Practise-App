@@ -16,9 +16,14 @@ interface IResponse {
   expiresIn:string;
 }
 
+export interface IUserLoginData {
+  email:string;
+  password:string;
+}
+
 export const AuthService:IAuthService = {
     // IGNORE
-    authenticate(userData:{email:string, password:string}): boolean {
+    authenticate(userData:IUserLoginData): boolean {
       let isAuthenticated = false;
       axios.post(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${process.env.REACT_APP_FIREBASE_API_KEY}`, {
         email: userData.email,
