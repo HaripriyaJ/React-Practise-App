@@ -1,13 +1,13 @@
 @import '../../../constants/CssVariables.scss';
 
-.navbar {
+.side-navbar {
     display: block;
     position: fixed;
     left: 10px;
     bottom: 10px;
     border-radius: 6px;
     width: 200px;
-    height: 90%;
+    height: 95%;
     background-color: $SECONDARY_COLOR;
     animation: shadow-glow 2s infinite alternate-reverse;
     
@@ -19,12 +19,10 @@
         display: flex;
         align-items: center;
         min-height: 4.25rem;
-        margin: 0 5px 10px 5px;
         border-bottom: 1px solid $FONT_COLOR_DEFAULT;
     }
 
     &-menu {
-        margin: 0 0 0 20%;
         flex-direction: column;
         box-shadow: none;
         background-color: $SECONDARY_COLOR;
@@ -32,22 +30,19 @@
 
     &-item {
         display: block;
-        margin: 2em 0;
         cursor: pointer;
+
+        .nav-icon {
+            width: 25px;
+            &-text {
+                text-decoration: none;
+            }
+        }
     }
 
     &-item:hover * {
+        color: $FONT_COLOR_DEFAULT;
         text-shadow: 1px 1px 5px $HIGHLIGHT_COLOR;
-    }
-
-    .icon {
-        padding: 0.5em;
-        display: inline-block;
-        width: 25px;
-        &-text {
-            padding-left: 0.2em;
-            text-decoration: none;
-        }
     }
 }
 
