@@ -12,8 +12,10 @@ function Header() {
             <div id="userProfileOptions" className="navbar-menu">
                 <div className="navbar-end">
                     <div className="navbar-item has-dropdown is-hoverable">
-                        <span className="navbar-link profile">Welcome, Name</span>
-                        <div className="navbar-dropdown">
+                        <span className="navbar-link profile">
+                            <img src="/assets/images/tania.jpg" alt="Profile" />
+                        </span>
+                        <div className="navbar-dropdown is-right">
                             <span className="navbar-item">
                                 <i className="fa fa-user profile-options"></i>
                                 My Profile

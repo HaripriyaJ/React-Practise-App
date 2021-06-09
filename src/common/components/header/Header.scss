@@ -33,8 +33,6 @@
     &-dropdown {
         border-radius: 5px;
         border: 1px solid $HIGHLIGHT_COLOR;
-        left: 25px;
-        min-width: 80%;
     }
 
     &-burger {
@@ -48,20 +46,14 @@
             color: $FONT_COLOR_DEFAULT;
             text-shadow: 1px 1px 5px $HIGHLIGHT_COLOR;
         }
+
+        & img {
+            max-height: 50px;
+            border-radius: 50%;
+        }
     }
 }
 
-.profile {
-    background-color: $SECONDARY_COLOR;
-    padding-right: 80px !important;
-    padding-left: 25px;
-    border-radius: 25px;
-    
-    &:hover {
-        background-color: $SECONDARY_COLOR !important;
-    }
-
-    &-options {
-        padding: 5px 10px 5px 5px;
-    }
+.profile-options {
+    padding: 5px 10px 5px 5px;
 }
