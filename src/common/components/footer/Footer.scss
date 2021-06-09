@@ -1,0 +1,16 @@
+@import '../../../constants/CssVariables.scss';
+
+.footer {
+    width: 80%;
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    padding: 2rem 1.5rem 2rem;
+    background-color: $PRIMARY_COLOR;
+    border-top: 1px solid $HIGHLIGHT_COLOR;
+    z-index: -1;
+}
+
+a:hover {
+    color: $HIGHLIGHT_COLOR;
+}
