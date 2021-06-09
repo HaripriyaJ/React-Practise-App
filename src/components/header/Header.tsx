@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchField from '../search-field/SearchField';
+import SearchField from '../../common/components/search-field/SearchField';
 import './Header.scss';
 
 function Header() {

@@ -1,7 +1,7 @@
 import React from 'react';
 import './SideNavBar.scss';
-import logo from '../../../logo.svg';
-import { ISideNavBarOptions } from '../../../interfaces/SideNavBar';
+import logo from '../../logo.svg';
+import { ISideNavBarOptions } from '../../interfaces/SideNavBar';
 import { Link } from 'react-router-dom';
 
 function SideNavBar(props: {options: ISideNavBarOptions[]}) {

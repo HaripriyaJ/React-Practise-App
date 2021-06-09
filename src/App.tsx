@@ -1,7 +1,7 @@
 import React from 'react';
 import Login from './components/Login';
 import { Redirect, Route, Switch } from "react-router-dom";
-import Home from './common/components/Home';
+import Home from './components/Home';
 import PrivateRoute from './common/components/PrivateRoute';
 import PageNotFound from './common/components/PageNotFound';
 import { AuthService } from './apis/Authentication';

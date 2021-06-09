@@ -1,16 +1,16 @@
 import React from 'react';
-import { ISideNavBarOptions } from '../../interfaces/SideNavBar';
-import Footer from './footer/Footer';
+import { ISideNavBarOptions } from '../interfaces/SideNavBar';
+import Footer from '../common/components/footer/Footer';
 import Header from './header/Header';
 import SideNavBar from  './side-nav/SideNavBar';
 
 const sideNavBarOptions: ISideNavBarOptions[] = [
     {
-        name: 'users',
-        displayText: 'Users',
-        icon: 'users',
-        title: 'User List',
-        path: '/users'
+        name: 'projects',
+        displayText: 'Projects',
+        icon: 'tasks',
+        title: 'Project List',
+        path: '/projects'
     },
     {
         name: 'todo',
