@@ -1,0 +1,67 @@
+@import '../../../constants/CssVariables.scss';
+
+.navbar {
+    background-color: $PRIMARY_COLOR;
+    min-height: 4.25rem;
+    z-index: 0;
+    border-top: 3px solid $HIGHLIGHT_COLOR;
+
+    * { background-color: $PRIMARY_COLOR; }
+
+    &-end {
+        margin-right: 1rem;
+    }
+
+    &-link {
+        color: $FONT_COLOR_DEFAULT !important;
+    }
+
+    &-link:not(.is-arrowless)::after {
+        border-color: $FONT_COLOR_DEFAULT;
+        margin-top: -.375em;
+        right: 1em;
+    }
+
+    &-link:hover {
+        background-color: $SECONDARY_COLOR !important;
+    }
+    
+    &-menu {
+        margin-top: 10px;
+    }
+
+    &-dropdown {
+        border-radius: 5px;
+        border: 1px solid $HIGHLIGHT_COLOR;
+        left: 25px;
+        min-width: 80%;
+    }
+
+    &-burger {
+        color: $FONT_COLOR_DEFAULT;
+    }
+
+    &-item {
+        cursor: pointer;
+        color: $FONT_COLOR_DEFAULT !important;
+        &:hover {
+            color: $FONT_COLOR_DEFAULT;
+            text-shadow: 1px 1px 5px $HIGHLIGHT_COLOR;
+        }
+    }
+}
+
+.profile {
+    background-color: $SECONDARY_COLOR;
+    padding-right: 80px !important;
+    padding-left: 25px;
+    border-radius: 25px;
+    
+    &:hover {
+        background-color: $SECONDARY_COLOR !important;
+    }
+
+    &-options {
+        padding: 5px 10px 5px 5px;
+    }
+}

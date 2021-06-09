@@ -1,6 +1,7 @@
 import React from 'react';
 import { ISideNavBarOptions } from '../../interfaces/SideNavBar';
 import Footer from './footer/Footer';
+import Header from './header/Header';
 import SideNavBar from  './side-nav/SideNavBar';
 
 const sideNavBarOptions: ISideNavBarOptions[] = [
@@ -23,6 +24,7 @@ const sideNavBarOptions: ISideNavBarOptions[] = [
 function Home() {
     return (
         <>
+            <Header />
             <SideNavBar options={sideNavBarOptions}/>
             <Footer />
         </>
