@@ -1,8 +1,29 @@
 import React from 'react';
+import { ISideNavBarOptions } from '../../interfaces/SideNavBar';
+import SideNavBar from  './side-nav/SideNavBar';
+
+const sideNavBarOptions: ISideNavBarOptions[] = [
+    {
+        name: 'users',
+        displayText: 'Users',
+        icon: 'users',
+        title: 'User List',
+        path: '/users'
+    },
+    {
+        name: 'todo',
+        displayText: 'To Do',
+        icon: 'pencil',
+        title: 'ToDos List',
+        path: '/todo'
+    }
+]
 
 function Home() {
     return (
-        <h3>Welcome to React home!</h3>
+        <>
+            <SideNavBar options={sideNavBarOptions}/>
+        </>
     );
 }
 export default Home;

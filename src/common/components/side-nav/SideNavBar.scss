@@ -1,0 +1,81 @@
+@import '../../../constants/CssVariables.scss';
+
+.navbar {
+    display: block;
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    border-radius: 6px;
+    width: 200px;
+    height: 90%;
+    background-color: $SECONDARY_COLOR;
+    animation: shadow-glow 2s infinite alternate-reverse;
+    
+    * {
+        color: $FONT_COLOR_DEFAULT;
+    }
+
+    &-brand {
+        display: flex;
+        align-items: center;
+        min-height: 4.25rem;
+        margin: 0 5px 10px 5px;
+        border-bottom: 1px solid $FONT_COLOR_DEFAULT;
+    }
+
+    &-menu {
+        margin: 0 0 0 20%;
+        flex-direction: column;
+        box-shadow: none;
+        background-color: $SECONDARY_COLOR;
+    }
+
+    &-item {
+        display: block;
+        margin: 2em 0;
+        cursor: pointer;
+    }
+
+    &-item:hover * {
+        text-shadow: 1px 1px 5px $HIGHLIGHT_COLOR;
+    }
+
+    .icon {
+        padding: 0.5em;
+        display: inline-block;
+        width: 25px;
+        &-text {
+            padding-left: 0.2em;
+            text-decoration: none;
+        }
+    }
+}
+
+@keyframes shadow-glow {
+    0% {
+        box-shadow: $BOX_SHADOW_PRIMARY 0px 7px 20px 0px;
+    }
+    100% {
+        box-shadow: $BOX_SHADOW_PRIMARY 0px 5px 29px 0px;
+    }
+}
+
+.app-logo {
+    height: 50px;
+    pointer-events: none;
+  }
+  
+@media (prefers-reduced-motion: no-preference) {
+    .app-logo {
+        animation: app-logo-spin infinite 20s linear;
+    }
+}
+
+@keyframes app-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
