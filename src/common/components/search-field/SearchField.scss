@@ -1,0 +1,6 @@
+.panel {
+    &-block:not(:last-child), 
+    &-tabs:not(:last-child) {
+        border-bottom: none !important;
+    }
+}

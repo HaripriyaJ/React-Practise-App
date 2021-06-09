@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchField from '../search-field/SearchField';
 import './Header.scss';
 
 function Header() {
@@ -8,9 +9,10 @@ function Header() {
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>  
+            </div> 
             <div id="userProfileOptions" className="navbar-menu">
                 <div className="navbar-end">
+                    <div className="navbar-item"> <SearchField /> </div>
                     <div className="navbar-item has-dropdown is-hoverable">
                         <span className="navbar-link profile">
                             <img src="/assets/images/tania.jpg" alt="Profile" />
@@ -20,7 +22,6 @@ function Header() {
                                 <i className="fa fa-user profile-options"></i>
                                 My Profile
                             </span>
-                            <hr className="navbar-divider" />
                             <span className="navbar-item">
                                 <i className="fa fa-sign-out profile-options"></i>
                                 Logout

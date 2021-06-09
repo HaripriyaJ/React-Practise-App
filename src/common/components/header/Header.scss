@@ -6,24 +6,21 @@
     z-index: 0;
     border-top: 3px solid $HIGHLIGHT_COLOR;
 
-    * { background-color: $PRIMARY_COLOR; }
-
     &-end {
         margin-right: 1rem;
     }
 
     &-link {
         color: $FONT_COLOR_DEFAULT !important;
+        &:hover {
+            background-color: $SECONDARY_COLOR !important;
+        }
     }
 
     &-link:not(.is-arrowless)::after {
         border-color: $FONT_COLOR_DEFAULT;
         margin-top: -.375em;
         right: 1em;
-    }
-
-    &-link:hover {
-        background-color: $SECONDARY_COLOR !important;
     }
     
     &-menu {
@@ -33,6 +30,10 @@
     &-dropdown {
         border-radius: 5px;
         border: 1px solid $HIGHLIGHT_COLOR;
+        background-color: $FONT_COLOR_DEFAULT;
+        .navbar-item:hover * {
+            color: $HIGHLIGHT_COLOR;
+        }
     }
 
     &-burger {
@@ -41,12 +42,6 @@
 
     &-item {
         cursor: pointer;
-        color: $FONT_COLOR_DEFAULT !important;
-        &:hover {
-            color: $FONT_COLOR_DEFAULT;
-            text-shadow: 1px 1px 5px $HIGHLIGHT_COLOR;
-        }
-
         & img {
             max-height: 50px;
             border-radius: 50%;
@@ -56,4 +51,14 @@
 
 .profile-options {
     padding: 5px 10px 5px 5px;
+}
+
+input[type="text"] {
+    border-radius: 25px;
+    width: 400px;
+    background-color: $FONT_COLOR_DEFAULT !important;
+}
+
+.control.has-icons-left .icon {
+    color: #a7a4a4;
 }
