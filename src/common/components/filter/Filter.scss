@@ -1,0 +1,13 @@
+@import '../../../configs/CssVariables.scss';
+
+.filter {
+    color: $FONT_COLOR_DEFAULT !important;
+}
+
+.filter-option:hover {
+    color: $HIGHLIGHT_COLOR;
+}
+
+.filter :hover {
+    color: $HIGHLIGHT_COLOR;
+}

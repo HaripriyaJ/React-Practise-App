@@ -14,7 +14,8 @@ export const projects:IProjectDetails[] = [
         ],
         progress: 6,
         startDate: '2021-Jun-09',
-        endDate: '2021-Dec-09'
+        endDate: '2021-Dec-09',
+        status: 'active'
     },
     {
         id: 2,
@@ -33,7 +34,8 @@ export const projects:IProjectDetails[] = [
         ],
         progress: 66,
         startDate: '2021-Feb-09',
-        endDate: '2022-Dec-09'
+        endDate: '2022-Dec-09',
+        status: 'active'
     },
     {
         id: 3,
@@ -48,7 +50,8 @@ export const projects:IProjectDetails[] = [
         ],
         progress: 20,
         startDate: '2021-Jun-09',
-        endDate: '2021-Jul-09'
+        endDate: '2021-Jul-09',
+        status: 'closed'
     },
     {
         id: 4,
@@ -83,7 +86,8 @@ export const projects:IProjectDetails[] = [
         ],
         progress: 96,
         startDate: '2021-Mar-09',
-        endDate: '2022-Nov-09'
+        endDate: '2022-Nov-09',
+        status: 'on hold'
     },
     {
         id: 5,
@@ -98,7 +102,8 @@ export const projects:IProjectDetails[] = [
         ],
         progress: 43,
         startDate: '2021-Mar-09',
-        endDate: '2022-Nov-09'
+        endDate: '2022-Nov-09',
+        status: 'closed'
     },
     {
         id: 6,
@@ -117,6 +122,7 @@ export const projects:IProjectDetails[] = [
         ],
         progress: 9,
         startDate: '2021-Mar-09',
-        endDate: '2022-Nov-09'
+        endDate: '2022-Nov-09',
+        status: 'active'
     }
 ];

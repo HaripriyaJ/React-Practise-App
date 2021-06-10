@@ -13,7 +13,7 @@ export default function Login(props:any) {
     // Make API call, process and redirect here
     const formSubmit = (data:IUserLoginData) => {
         localStorage.setItem('email', data.email);
-        props.history.push("/home") // Redirect to home page
+        props.history.push("/") // Redirect to home page
     }
 
     return (
