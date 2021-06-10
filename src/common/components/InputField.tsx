@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { FONT_COLOR_DEFAULT, HIGHLIGHT_COLOR } from "../../constants/CssVariables";
+import { FONT_COLOR_DEFAULT, HIGHLIGHT_COLOR } from "../../configs/CssVariables";
 import { InputFieldProp } from "../../interfaces/InputField";
 
 const StyledInputField = styled.input<InputFieldProp>`

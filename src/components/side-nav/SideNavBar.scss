@@ -1,4 +1,4 @@
-@import '../../constants/CssVariables.scss';
+@import '../../configs/CssVariables.scss';
 
 .side-navbar {
     display: block;
@@ -30,8 +30,7 @@
 
     &-item {
         display: block;
-        cursor: pointer;
-
+        
         .nav-icon {
             width: 25px;
             &-text {

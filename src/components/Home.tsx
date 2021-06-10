@@ -1,31 +1,22 @@
 import React from 'react';
-import { ISideNavBarOptions } from '../interfaces/SideNavBar';
 import Footer from '../common/components/footer/Footer';
 import Header from './header/Header';
 import SideNavBar from  './side-nav/SideNavBar';
-
-const sideNavBarOptions: ISideNavBarOptions[] = [
-    {
-        name: 'projects',
-        displayText: 'Projects',
-        icon: 'tasks',
-        title: 'Project List',
-        path: '/projects'
-    },
-    {
-        name: 'todo',
-        displayText: 'To Do',
-        icon: 'pencil',
-        title: 'ToDos List',
-        path: '/todo'
-    }
-]
+import ProjectCard from '../common/components/project/card/ProjectCard';
+import ContentArea from '../common/components/content/Content';
+import { sideNavBarOptions } from '../mock/SideNavBar';
+import { projects } from '../mock/Projects';
 
 function Home() {
     return (
         <>
             <Header />
-            <SideNavBar options={sideNavBarOptions}/>
+            <main>
+                <SideNavBar options={sideNavBarOptions}/>
+                <ContentArea>
+                    <ProjectCard  list={projects}/>
+                </ContentArea>
+            </main>
             <Footer />
         </>
     );

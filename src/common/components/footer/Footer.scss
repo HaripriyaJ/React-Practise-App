@@ -1,14 +1,11 @@
-@import '../../../constants/CssVariables.scss';
+@import '../../../configs/CssVariables.scss';
 
 .footer {
-    width: 95%;
-    position: absolute;
-    right: 10px;
-    bottom: 0;
+    position: sticky;
     padding: 2rem 1.5rem 2rem;
     background-color: $PRIMARY_COLOR;
     border-top: 1px solid $HIGHLIGHT_COLOR;
-    z-index: -1;
+    margin: 0 5% 0 15%;
 }
 
 a:hover {

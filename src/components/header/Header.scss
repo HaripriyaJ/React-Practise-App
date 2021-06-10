@@ -1,9 +1,9 @@
-@import '../../constants/CssVariables.scss';
+@import '../../configs/CssVariables.scss';
 
 .navbar {
     background-color: $PRIMARY_COLOR;
     min-height: 4.25rem;
-    z-index: 0;
+    z-index: 1000;
     border-top: 3px solid $HIGHLIGHT_COLOR;
 
     &-end {
@@ -31,6 +31,7 @@
         border-radius: 5px;
         border: 1px solid $HIGHLIGHT_COLOR;
         background-color: $FONT_COLOR_DEFAULT;
+        z-index: 1000;
         .navbar-item:hover * {
             color: $HIGHLIGHT_COLOR;
         }
@@ -41,7 +42,6 @@
     }
 
     &-item {
-        cursor: pointer;
         & img {
             max-height: 50px;
             border-radius: 50%;

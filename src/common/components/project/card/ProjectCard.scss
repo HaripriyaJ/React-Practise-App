@@ -1,0 +1,93 @@
+@import '../../../../configs/CssVariables.scss';
+
+.tag:not(body).is-primary.is-light {
+    background-color: $FONT_COLOR_DEFAULT;
+    color: #00947e;
+}
+
+.icon {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 3px solid $WHITE_SHADOW;
+}
+
+.progress {
+    background-color: red;
+    &.is-small {
+        height: 0.25rem;
+        border-radius: 0;
+        position: relative;
+        top: 12px;
+    }
+}
+
+.ellipsis {
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.flex {
+    &-row {
+        display: flex;
+        flex-direction: row;
+    }
+    &-column {
+        display: flex;
+        flex-direction: column;
+        margin-right: 1rem;
+    }
+}
+
+.project-card {
+    > div {
+        &:first-child {
+            flex: 2;
+        }
+        &:nth-child(2) {
+            flex: 2;
+        }
+        &:not(:first-child) {
+            flex: 1;
+        }
+        &:last-child {
+            flex: 0;
+        }
+    }
+    &-wrapper {
+        border-radius: 5px;
+        box-shadow: 0 0 20px $SECONDARY_COLOR;
+    }
+}
+
+.more {
+    justify-content: center;
+    align-items: center;
+    &:hover {
+        color: $HIGHLIGHT_COLOR;
+    }
+}
+
+.start-date,
+.end-date {
+    margin: 0 7rem 0 0;
+    padding: 1.5rem;
+    background-color: $WHITE_SHADOW;
+    border-top: 5px solid $HIGHLIGHT_COLOR;
+    border-radius: 5px;
+}
+
+.end-date {
+    border-top: 5px solid $DANGER;
+}
+
+.user-list {
+    justify-content: flex-end;
+}
+
+.custom-progress {
+    position: relative;
+    height: 10px;
+    top: 24px;
+    background-color: $BOX_SHADOW_PRIMARY;
+}
