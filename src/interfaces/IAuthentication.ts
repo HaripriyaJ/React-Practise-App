@@ -1,8 +1,3 @@
-export interface IAuthService {
-    authenticate: (response:any) => boolean;
-    login: () => any;
-}
-
 export interface IResponse {
     kind: string;
     localId: string;

@@ -6,14 +6,16 @@ import "../common/styles/Card.scss";
 import "../common/styles/Forms.scss";
 import InputError from "../common/components/InputError";
 import { IUserLoginData } from "../interfaces/IAuthentication";
+import { useDispatch } from "react-redux";
+import { AuthService } from "../apis/Authentication";
 
-export default function Login(props:any) {
+export default function Login() {
     const { register, formState:{ errors }, handleSubmit } = useForm();
+    const dispatch = useDispatch();
 
     // Make API call, process and redirect here
     const formSubmit = (data:IUserLoginData) => {
-        localStorage.setItem('email', data.email);
-        props.history.push("/") // Redirect to home page
+      dispatch(AuthService.Authenticate(data));
     }
 
     return (

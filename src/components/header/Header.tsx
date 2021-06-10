@@ -1,4 +1,5 @@
 import React from 'react';
+import { AuthService } from '../../apis/Authentication';
 import SearchField from '../../common/components/search-field/SearchField';
 import './Header.scss';
 
@@ -22,7 +23,7 @@ function Header() {
                                 <i className="fa fa-user profile-options"></i>
                                 My Profile
                             </span>
-                            <span className="navbar-item">
+                            <span className="navbar-item" onClick={() => AuthService.Logout()}>
                                 <i className="fa fa-sign-out profile-options"></i>
                                 Logout
                             </span>

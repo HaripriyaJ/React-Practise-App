@@ -1,28 +1,36 @@
 import axios from "axios";
-import { IAuthService, IUserLoginData } from "../interfaces/IAuthentication";
+import { loginActions } from "../configs/actions/Login";
+import { IUserLoginData } from "../interfaces/IAuthentication";
 
-export const AuthService:IAuthService = {
-    // IGNORE
-    authenticate(userData:IUserLoginData): boolean {
-      let isAuthenticated = false;
-      axios.post(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${process.env.REACT_APP_FIREBASE_API_KEY}`, {
+const Authenticate = (userData:IUserLoginData) => async (dispatch: any) => {
+  try {
+      const res = await axios.post(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${process.env.REACT_APP_FIREBASE_API_KEY}`, {
         email: userData.email,
         password: userData.password,
         returnSecureToken: true
-      })
-      .then((response) => {
-        console.log(response);
-        // success
-        isAuthenticated = true;
-        return response
-      })
-      .catch((error) => {
-        console.log(error);
       });
-      return isAuthenticated;
-    },
-  
-    login() {
-      return localStorage.getItem('email') ? true : false;
-    }
+
+      LoginSuccess(res.data.email);
+      dispatch({
+        type: loginActions.LOGIN_SUCCESS,
+        payload: res.data
+      });
+  }
+  catch (error) {
+      dispatch({
+        type: loginActions.LOGIN_FAILURE,
+        payload: error,
+      });
+  }
 }
+
+const LoginSuccess = (email: string) => {
+  localStorage.setItem('email', email);
+}
+
+const Logout = () => {
+  localStorage.removeItem('email');
+  window.location.reload();
+}
+
+export const AuthService = { Authenticate, Logout }

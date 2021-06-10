@@ -4,16 +4,17 @@ import { Redirect, Route, Switch } from "react-router-dom";
 import Home from './components/Home';
 import PrivateRoute from './common/components/PrivateRoute';
 import PageNotFound from './common/components/PageNotFound';
-import { AuthService } from './apis/Authentication';
+import { RootStateOrAny, useSelector } from 'react-redux';
 
 function App() {
-  // Note: Specify more specific routes first and general routes towards the end
+  const { loggedIn } = useSelector((state: RootStateOrAny) => state.login);
   return (
+      // Note: Specify more specific routes first and general routes towards the end
       <Switch>
 
         {/* Redirect user to home page onload by default if user is logged in */}
         <Route exact path="/login" render={(props) => {
-            return AuthService.login() === true ? <Redirect to="/" /> : React.createElement(Login, {...props})
+            return loggedIn ? <Redirect to="/" /> : React.createElement(Login, {...props})
           }}
         />
 
