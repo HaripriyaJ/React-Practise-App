@@ -17,7 +17,7 @@ function ProjectCard(props:{list: IProjectDetails[]}) {
     return (
         <>
         {
-            props.list.map(project => {
+            props.list.length && props.list.map(project => {
                 return (
                     <div className="mb-6 p-5 project-card-wrapper" key={project.id}>
                         <article className="flex-row project-card">

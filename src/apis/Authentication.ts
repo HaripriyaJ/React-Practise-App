@@ -13,13 +13,13 @@ const Authenticate = (userData:IUserLoginData) => async (dispatch: any) => {
       LoginSuccess(res.data.email);
       dispatch({
         type: loginActions.LOGIN_SUCCESS,
-        payload: res.data
+        payload: res.data.email
       });
   }
   catch (error) {
       dispatch({
         type: loginActions.LOGIN_FAILURE,
-        payload: error,
+        payload: error.response.data,
       });
   }
 }

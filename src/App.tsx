@@ -5,6 +5,8 @@ import Home from './components/Home';
 import PrivateRoute from './common/components/PrivateRoute';
 import PageNotFound from './common/components/PageNotFound';
 import { RootStateOrAny, useSelector } from 'react-redux';
+import MainLayout from './common/components/MainLayout';
+import ProjectList from './components/ProjectList';
 
 function App() {
   const { loggedIn } = useSelector((state: RootStateOrAny) => state.login);
@@ -18,7 +20,13 @@ function App() {
           }}
         />
 
-        <PrivateRoute exact path="/"><Home/></PrivateRoute>
+        <PrivateRoute exact path="/projects">
+          <MainLayout><ProjectList/></MainLayout>
+        </PrivateRoute>
+
+        <PrivateRoute exact path="/">
+          <MainLayout><Home/></MainLayout>
+        </PrivateRoute>
 
         {/* Redirects user to login page onload by default if user is not logged in (or)
             Redirects user to page-not-found page if user tries to access illegal routes (or)

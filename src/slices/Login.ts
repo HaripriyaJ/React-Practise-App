@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { loginActions } from "../configs/actions/Login";
 
 export const isLoggedIn = (): boolean => {
     return localStorage.getItem('email') ? true : false;
@@ -13,10 +14,10 @@ const loginSlice = createSlice({
     },
     reducers: {
         success: (state, action) => {
-            state.loggedIn = true;
+            action.type === loginActions.LOGIN_SUCCESS && ( state.loggedIn = true);
         },
         failure: (state, action) => {
-            state.loggedIn = false;
+            action.type === loginActions.LOGIN_FAILURE && (state.loggedIn = false);
         }
     }
 });

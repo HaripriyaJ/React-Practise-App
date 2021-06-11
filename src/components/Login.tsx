@@ -13,7 +13,7 @@ export default function Login() {
     const { register, formState:{ errors }, handleSubmit } = useForm();
     const dispatch = useDispatch();
 
-    // Make API call, process and redirect here
+    // Makes API call to process and redirect
     const formSubmit = (data:IUserLoginData) => {
       dispatch(AuthService.Authenticate(data));
     }
