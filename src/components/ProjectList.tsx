@@ -7,14 +7,18 @@ import Sort from '../common/components/sort/Sort';
 import ProjectCard from '../common/components/project/card/ProjectCard';
 import { RootStateOrAny, useDispatch, useSelector } from 'react-redux';
 import { GetProjects } from '../apis/Projects';
+import { StyledCard } from './Home';
+import { IProjectDetails } from '../interfaces/ProjectDetails';
 
 function ProjectList() {
     // Load project list
-    const { projects } = useSelector((state: RootStateOrAny) => state.projects);
+    let { projects } = useSelector((state: RootStateOrAny) => state.projects);
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(GetProjects());
+
+        return console.log("Wuit")
     }, [dispatch]);
 
     return (
@@ -28,7 +32,9 @@ function ProjectList() {
                 </div>
             </div>
             <div className="min-height">
-                <ProjectCard  list={projects}/>
+                {projects.length > 0 ? 
+                    projects.map((project: IProjectDetails, index: any) => <ProjectCard key={index} list={project}/>) :  
+                    <StyledCard text="No projects found :("/>}
             </div>
             <Footer />
         </>
