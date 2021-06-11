@@ -1,4 +1,5 @@
 import axios from "axios";
+import { RemoveFromLS, StoreToLS } from "../common/services/LocalStorageOperations";
 import { loginActions } from "../configs/actions/Login";
 import { IUserLoginData } from "../interfaces/IAuthentication";
 
@@ -25,11 +26,11 @@ const Authenticate = (userData:IUserLoginData) => async (dispatch: any) => {
 }
 
 const LoginSuccess = (email: string) => {
-  localStorage.setItem('email', email);
+  StoreToLS('email', email);
 }
 
 const Logout = () => {
-  localStorage.removeItem('email');
+  RemoveFromLS('email');
   window.location.reload();
 }
 

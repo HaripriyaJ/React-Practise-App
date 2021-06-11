@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { filterValue } from '../mock/Filter';
+import { projectFilterValues } from '../mock/Filter';
 import { sortValues } from '../mock/Sort';
 import Filter from '../common/components/filter/Filter';
 import Footer from '../common/components/footer/Footer';
@@ -21,13 +21,15 @@ function ProjectList() {
         <>
             <div className="flex-row mb-3">
                 <div className="navbar-start">
-                    <Filter filterList={filterValue} />
+                    <Filter filterList={projectFilterValues} />
                 </div>
                 <div className="navbar-end">
                     <Sort sortList={sortValues} />
                 </div>
             </div>
-            <ProjectCard  list={projects}/>
+            <div className="min-height">
+                <ProjectCard  list={projects}/>
+            </div>
             <Footer />
         </>
     );

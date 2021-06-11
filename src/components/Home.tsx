@@ -1,10 +1,10 @@
 import React from 'react';
 import '../common/styles/Card.scss';
 
-const WelcomeCard = () => {
+export const StyledCard = (props: any) => {
     return (
         <div className="welcome-card">
-            <p className="title">Get Started!</p>
+            <p className="title">{props.text}</p>
         </div>
     );
 };
@@ -12,7 +12,7 @@ const WelcomeCard = () => {
 function Home() {
     return (
         <>
-           <WelcomeCard />
+           <StyledCard  text="Get Started!"/>
         </>
     );
 }

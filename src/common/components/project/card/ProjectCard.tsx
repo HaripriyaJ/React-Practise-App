@@ -1,4 +1,5 @@
 import React from 'react';
+import { StyledCard } from '../../../../components/Home';
 import { IProjectDetails, IResourceDetails } from '../../../../interfaces/ProjectDetails';
 import ProgressBar from '../../ProgressBar';
 import './ProjectCard.scss';
@@ -17,7 +18,7 @@ function ProjectCard(props:{list: IProjectDetails[]}) {
     return (
         <>
         {
-            props.list.length && props.list.map(project => {
+            props.list.length ? props.list.map(project => {
                 return (
                     <div className="mb-6 p-5 project-card-wrapper" key={project.id}>
                         <article className="flex-row project-card">
@@ -53,7 +54,9 @@ function ProjectCard(props:{list: IProjectDetails[]}) {
                             <ProgressBar width={project.progress}/>
                         </div>
                     </div>
-            )})
+            )}):
+
+            <StyledCard text="No projects found :("/>
         }
         </>
     );

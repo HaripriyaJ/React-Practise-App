@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { FetchFromLS } from "../common/services/LocalStorageOperations";
 import { loginActions } from "../configs/actions/Login";
 
 export const isLoggedIn = (): boolean => {
-    return localStorage.getItem('email') ? true : false;
+    return FetchFromLS('email') ? true : false;
 }
 
 const initialState = isLoggedIn();
