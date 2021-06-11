@@ -1,18 +1,20 @@
+import { sortOrder } from "../configs/actions/Projects";
+
 export interface ISortList {
     name: string; 
     text: string; 
-    isClicked: boolean;
+    action: string;
 }
 
 export const sortValues: ISortList[] = [
     {
         name: 'oldest',
         text: 'Oldest',
-        isClicked: true
+        action: sortOrder.ASC
     },
     {
         name: 'newest',
         text: 'Newest',
-        isClicked: false
+        action: sortOrder.DESC
     }
 ];

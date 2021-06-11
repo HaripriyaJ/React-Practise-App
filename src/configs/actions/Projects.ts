@@ -15,6 +15,11 @@ export const projectStatus = {
     ACTIVE: 'active',
     INACTIVE: 'onHold',
     CLOSED: 'closed'
+};
+
+export const sortOrder = {
+    ASC: 'oldest',
+    DESC: 'newest'
 }
 
 export const projectListLSKey = "projectList";
